@@ -52,7 +52,9 @@ Step 3 — Installing PHP
 ```
 sudo apt install php libapache2-mod-php php-mysql
 ```
+
 In most cases, you will want to modify the way that Apache serves files when a directory is requested. Currently, if a user requests a directory from the server, Apache will first look for a file called index.html. We want to tell the web server to prefer PHP files over others, so make Apache look for an index.php file first.
+
 ```
 sudo nano /etc/apache2/mods-enabled/dir.conf
 ```
