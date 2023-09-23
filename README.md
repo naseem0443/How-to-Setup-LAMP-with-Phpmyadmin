@@ -38,6 +38,7 @@ Note  please note here replace the "password" with yours.
 FLUSH PRIVILEGES;
 ```
 
+```
 SELECT user,authentication_string,plugin,host FROM mysql.user;
 ```
 ```
