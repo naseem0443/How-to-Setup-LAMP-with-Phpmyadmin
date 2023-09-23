@@ -6,39 +6,49 @@ Step 1 — Installing Apache and Updating the Firewall
 	sudo apt upgrade
 	sudo apt install apache2
 ```
-. APACHE INSTALLED SUCCESFULLY TILL HERE, YOU CAN CHECK BY ENTERING YOUR PUBLIC IP OR PUBLICK DNS ADDRESS 
+ APACHE INSTALLED SUCCESFULLY TILL HERE, YOU CAN CHECK BY ENTERING YOUR PUBLIC IP OR PUBLICK DNS ADDRESS 
 - http://your_server_ip
 
 
 Step 2 — Installing MySQL
+
 ```
 sudo apt install mysql-server
 ```
+
 ```
 sudo mysql_secure_installation
 ```
+
+```
 sudo mysql
 ```
+```
 SELECT user,authentication_string,plugin,host FROM mysql.user;
+
 ```
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
 ```
 
-.Note  please note here replace the "password" with yours.
+Note  please note here replace the "password" with yours.
+
 
 ```
 FLUSH PRIVILEGES;
 ```
+
 SELECT user,authentication_string,plugin,host FROM mysql.user;
+```
 ```
 exit
 ```
-.At this point, your database system is now set up and you can move on to installing PHP, the final component of the LAMP stack.
+
+At this point, your database system is now set up and you can move on to installing PHP, the final component of the LAMP stack.
 
 Step 3 — Installing PHP
 
 ```
-	sudo apt install php libapache2-mod-php php-mysql
+sudo apt install php libapache2-mod-php php-mysql
 ```
 In most cases, you will want to modify the way that Apache serves files when a directory is requested. Currently, if a user requests a directory from the server, Apache will first look for a file called index.html. We want to tell the web server to prefer PHP files over others, so make Apache look for an index.php file first.
 ```
@@ -50,7 +60,7 @@ Move the PHP index file (highlighted above) to the first position after the Dire
 	DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm
 </IfModule>	
 ```
------------------------------------
+
 ```
 sudo systemctl restart apache2
 sudo systemctl status apache2
