@@ -35,7 +35,8 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password
 Note  please note here replace the "password" with yours.
 
 ```
-GRANT ALL PRIVILEGES ON your_database.* TO 'your_username'@'localhost';
+
+GRANT ALL PRIVILEGES ON database-name .* TO 'root'@'localhost' IDENTIFIED BY 'password';
 
 ```
 ```
