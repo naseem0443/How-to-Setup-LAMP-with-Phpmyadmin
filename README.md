@@ -118,7 +118,8 @@ Step 1 — Installing phpMyAdmin
 
 ```
 sudo apt update
-sudo apt install phpmyadmin php-mbstring php-gettext
+sudo apt install phpmyadmin php-mbstring
+
 ```
 Warning: When the prompt appears, “apache2” is highlighted, but not selected. If you do not hit SPACE to select Apache, the installer will not move the necessary files during installation. Hit SPACE, TAB, and then ENTER to select Apache.
 ```
