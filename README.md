@@ -2,9 +2,9 @@
 
 Step 1 — Installing Apache and Updating the Firewall
 ```
-	sudo apt update
-	sudo apt upgrade
-	sudo apt install apache2
+	sudo apt update -y
+	sudo apt upgrade -y
+	sudo apt install apache2 -y
 ```
  APACHE INSTALLED SUCCESFULLY TILL HERE, YOU CAN CHECK BY ENTERING YOUR PUBLIC IP OR PUBLICK DNS ADDRESS 
 - http://your_server_ip
@@ -123,6 +123,8 @@ sudo apt install phpmyadmin php-mbstring php-gettext
 Warning: When the prompt appears, “apache2” is highlighted, but not selected. If you do not hit SPACE to select Apache, the installer will not move the necessary files during installation. Hit SPACE, TAB, and then ENTER to select Apache.
 ```
 sudo phpenmod mbstring
+sudo ln -s /etc/phpmyadmin/apache.conf /etc/apache2/conf-available/phpmyadmin.conf
+sudo a2enconf phpmyadmin
 sudo systemctl restart apache2
 ```
 
